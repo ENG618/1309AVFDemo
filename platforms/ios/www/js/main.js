@@ -56,8 +56,8 @@ var searchFn = function(){
         .always(function() {
             console.log("complete");
         });
-    $.getJSON(url, loadImgs);
-}
+        $.getJSON(url, loadImgs);
+    }
 };// End Search Function
 
 // Display Popular Photos Function
@@ -145,7 +145,7 @@ var weatherData = function (received) {
 
 //Global Functions
 
-    $("#searchBtn").on("click", searchFn);
-    $("#popular").on("click", popularFn);
-    $("#currentBtn").on("click", currentFn);
+$("#searchBtn").on("click", searchFn);
+$("#popular").on("click", popularFn);
+$("#currentBtn").on("click", currentFn);
 

@@ -3,12 +3,19 @@ Eric Garcia
 1309 ASD
 */
 
-body{
+*{
 	line-height: 1.5em;
 	font-family: Arial;
 	font-size: 14px;
-	background: url(../img/dots_01/jpg) ;
 }
+
+.ui-page{
+	background: transparent url(../img/dots_01.jpg) no-repeat center center;
+/*	background: url(../img/dots_01.jpg);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;  
+*/}
 
 h1 {
 	color: red;
@@ -26,4 +33,35 @@ p{margin: 15px;}
 ul{list-style-type: none;}
 
 
+@media (min-width:35em){
+
+	/* wrap on wide viewports once open */
+	
+	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-push.ui-panel-content-fixed-toolbar-position-left,
+	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal.ui-panel-content-fixed-toolbar-position-left,
+	.ui-page-panel-open .ui-panel-content-wrap-display-push.ui-panel-content-wrap-position-left,
+	.ui-page-panel-open .ui-panel-content-wrap-display-reveal.ui-panel-content-wrap-position-left {
+		margin-right: 17em;
+	}
+	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-push.ui-panel-content-fixed-toolbar-position-right,
+	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal.ui-panel-content-fixed-toolbar-position-right,
+	.ui-page-panel-open .ui-panel-content-wrap-display-push.ui-panel-content-wrap-position-right,
+	.ui-page-panel-open .ui-panel-content-wrap-display-reveal.ui-panel-content-wrap-position-right {
+		margin-left: 17em;
+	}
+	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-push,
+	.ui-page-panel-open .ui-panel-content-fixed-toolbar-display-reveal {
+		width: auto;
+	}
+	
+	/* disable "dismiss" on wide viewports */
+	.ui-panel-dismiss {
+		display: none;
+	}
+	/* same as the above but for panels with display mode "push" only */
+	.ui-panel-dismiss-display-push {
+		display: none;
+	}
+
+}
 
