@@ -1,0 +1,29 @@
+/*
+Eric Garcia
+1309 ASD
+*/
+
+body{
+	line-height: 1.5em;
+	font-family: Arial;
+	font-size: 14px;
+	background: url(../img/dots_01/jpg) ;
+}
+
+h1 {
+	color: red;
+	font-size: 2em;
+	font-weight: normal;
+	margin: 0 0 .5em 0;
+}
+
+h2 {margin: 20px;}
+
+h3 {margin: 10px;}
+
+p{margin: 15px;}
+
+ul{list-style-type: none;}
+
+
+
