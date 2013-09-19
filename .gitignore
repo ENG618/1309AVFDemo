@@ -1,0 +1,5 @@
+# is a comment
+
+*.zip
+*.gz
+.DS_Store
