@@ -5,30 +5,34 @@ Eric Garcia
 
 *{
 	line-height: 1.5em;
-	font-family: Arial;
-	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
 }
 
-.ui-page{
-	background: transparent url(../img/dots_01.jpg) no-repeat center center;
-/*	background: url(../img/dots_01.jpg);
-	background-repeat:no-repeat;
+.ui-body-c, .ui-overlay-c{
+	background-image: url(../img/wood_02.jpg);
+	background-repeat:repeat;
 	background-position:center center;
-	background-size:cover;  
-*/}
+}
+
+.ui-panel-display-reveal {
+background: url(../img/wood_01.jpg);
+}
 
 h1 {
-	color: red;
+	/*color: white;*/
 	font-size: 2em;
 	font-weight: normal;
-	margin: 0 0 .5em 0;
 }
 
-h2 {margin: 20px;}
+h2 {
+	margin: 10px 5px 0 0;
+	font-size: 1.7em;
+}
 
-h3 {margin: 10px;}
+h3 {margin: 10px 5px 0 0; font-size: 1.2em}
 
-p{margin: 15px;}
+p{margin: 15px 5px 5px 15px; font-size: 1.1em}
 
 ul{list-style-type: none;}
 
