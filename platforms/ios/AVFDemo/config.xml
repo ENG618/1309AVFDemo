@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.helloCordova" version="2.0.0" xmlns="http://www.w3.org/ns/widgets">
-    <name>Hello Cordova</name>
+    <name>Memory Vault</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -40,4 +40,5 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
+    <icon src="icon.png" />
 </widget>
