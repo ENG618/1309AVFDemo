@@ -1,6 +1,9 @@
 // Eric Garcia
 // 1309 AVF
 
+// Global Variables
+// var destinationType=navigator.camera.DestinationType;
+
 // Global Functions
 
 // loadImgs Function
@@ -125,7 +128,7 @@ var currentFn = function(){
 };// End Current Weather Function
 
 // Weather Function
-var weatherData = function (received) {
+var weatherData = function(received) {
     console.log(received);
     var zipCode = $('#zipSearch').val();
     console.log(zipCode);
@@ -143,9 +146,56 @@ var weatherData = function (received) {
     }
 };// End Weather Function
 
-//Global Functions
+var picFn = function(){
+
+    function onSuccess(imageURI) {
+        var image = document.getElementById('myImage');
+        image.src = imageURI;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI });
+
+};
+
+var connectionFn = function(){
+        var networkState = navigator.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.CELL]     = 'Cell generic connection';
+        states[Connection.NONE]     = 'No network connection';
+
+        alert('Connection type: ' + states[networkState]);
+};
+
+var geoFn = function(){
+
+    function gioSuccess(geoSuccessData){
+        console.log(geoSuccessData);
+    }
+
+    function geoError(geoErrorMsg){
+        console.log(geoErrorMsg);
+    }
+
+    navigator.geolocation.getCurrentPosition(geoSuccess, geolocationError);
+
+};
+
 
 $("#searchBtn").on("click", searchFn);
 $("#popular").on("click", popularFn);
 $("#currentBtn").on("click", currentFn);
-
+$("#snapPic").on("click", picFn);
+$("#connection").on("click", connectionFn);
+$("#geoBtn").on("click", geoFn);

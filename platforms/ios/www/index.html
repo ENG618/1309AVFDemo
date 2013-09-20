@@ -26,7 +26,7 @@
             <div data-role="panel" data-position="left" id="homeNav">
                 <ul>
                     <li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist" data-role="button">Home</a></li>
-                    <li><a href="#underCon" data-icon="plus" data-role="button">New Memory</a></li>
+                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
                     <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
                     <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
                     <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
@@ -47,8 +47,10 @@
                     </ul>
                 </div>
                 <h2>Native Features</h2>
-                <ul data-role='listview' data-iset='true'>
-                    <li><a href="#native"></a></li>
+                <ul data-role='listview' data-inset='true'>
+                    <li><a href="#addItem">Camera</a></li>
+                    <li><button id='connection'>Check data connection</button></li>
+                    <li><a href="#geo">Location</a></li>
                 </ul>
 
             </article><!-- /Content -->
@@ -60,7 +62,7 @@
             <div data-role="panel" data-position="left" id="instaSearchNav">
                 <ul>
                     <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#underCon" data-icon="plus" data-role="button">New Memory</a></li>
+                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
                     <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
                     <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
                     <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
@@ -74,12 +76,12 @@
 
             <article data-role='content'>
                 <h2>Instagram Search</h2>
-                <input type="search" name="password" id="search" value="" placeholder="Instagram Serch">
-                <button id='searchBtn'>Search</button>
+                    <input type="search" id="search" value="" placeholder="Instagram Serch">
+                    <button id='searchBtn'>Search</button>
                 <label>Or search popular images</label>
                 <button id='popular'>Popular</button>
                 <ul id='results'>
-                    
+
                 </ul>
             </article>
         </section><!-- /Instagram -->
@@ -90,7 +92,7 @@
             <div data-role="panel" data-position="left" id="weatherNav">
                 <ul>
                     <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#underCon" data-icon="plus" data-role="button">New Memory</a></li>
+                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
                     <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
                     <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
                     <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
@@ -114,7 +116,58 @@
                     <li>Average Wind Speed: <em id='windSpdAvg'></em></li>
                 </ul>
             </article>
+        </section>
 
+        <!-- Add Item Page -->
+        <section data-role="page" id="addItem">
+
+            <!-- Navigation Side Panel -->
+            <div data-role="panel" data-position="left" id="addItemNav">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-role="button" data-transition="slide">Home</a></li>
+                    <li><a href="#addItem" class="ui-btn-active ui-state-persist" data-icon="plus" data-role="button" data-transition="slide">New Memory</a></li>
+                    <li><a href="#recentMem" data-icon="bars" data-role="button" data-transition="slide">Recent</a></li>
+                    <li><a href="#aboutUs" data-icon="info" data-role="button" data-transition="slide">About</a></li>
+                </ul>
+            </div><!-- /Navigation Side Panel -->
+
+            <!-- Header -->
+            <header data-role="header" data-position="fixed">
+                <a href="#addItemNav" data-icon="bars" >Menu</a>
+                <h1>Memory Vault</h1>
+            </header> <!-- /Header -->
+
+            <!-- Content -->
+            <article data-role='content'>
+                <h2>Add a new memory!</h2>
+                <button id='snapPic'>Take picture</button>
+            </article><!-- /Content -->     
+        </section><!-- /Add Item Page -->
+
+        <!-- Geo Page -->
+        <section data-role='page' id='geo'>
+            
+            <!-- Navigation Side Panel -->
+            <div data-role="panel" data-position="left" id="geoNav">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-role="button" data-transition="slide">Home</a></li>
+                    <li><a href="#addItem" class="ui-btn-active ui-state-persist" data-icon="plus" data-role="button" data-transition="slide">New Memory</a></li>
+                    <li><a href="#recentMem" data-icon="bars" data-role="button" data-transition="slide">Recent</a></li>
+                    <li><a href="#aboutUs" data-icon="info" data-role="button" data-transition="slide">About</a></li>
+                </ul>
+            </div><!-- /Navigation Side Panel -->
+
+            <!-- Header -->
+            <header data-role="header" data-position="fixed">
+                <a href="#geoNav" data-icon="bars" >Menu</a>
+                <h1>Memory Vault</h1>
+            </header> <!-- /Header -->
+
+            <article data-role='content'>
+                <h2>Geo Location</h2>                
+                <button id='geoBtn'>Check your location</button>
+                <ul id='geoResults'></ul>
+            </article>
         </section>
 
         <!-- Discussions -->
@@ -123,7 +176,7 @@
             <div data-role="panel" data-position="left" id="discussionsNav">
                 <ul>
                     <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#underCon" data-icon="plus" data-role="button">New Memory</a></li>
+                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
                     <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
                     <li><a href="#discussions" class="ui-btn-active ui-state-persist" data-icon="edit" data-role="button">Discussions</a></li>
                     <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
@@ -199,7 +252,7 @@
             <div data-role="panel" data-position="left" id="moreInfonav">
                 <ul>
                     <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#underCon" data-icon="plus" data-role="button">New Memory</a></li>
+                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
                     <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
                     <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
                     <li><a href="#moreInfo" class="ui-btn-active ui-state-persist" data-icon="info" data-role="button">More Info</a></li>
@@ -281,7 +334,7 @@
             <div data-role="panel" data-position="left" id="underConNav">
                 <ul>
                     <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#underCon" data-icon="plus" data-role="button">New Memory</a></li>
+                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
                     <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
                     <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
                     <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
@@ -297,8 +350,7 @@
             <article data-role='content'>
                 <h2>Under construction</h2>
                 <p>Please check back later.</p>
-            </article>
-            
+            </article>        
         </section><!-- /Under construction -->
 
         <!-- jQuery Call -->
