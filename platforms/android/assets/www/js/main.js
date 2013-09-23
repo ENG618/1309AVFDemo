@@ -146,6 +146,7 @@ var weatherData = function(received) {
     }
 };// End Weather Function
 
+// Camera Function
 var picFn = function(){
 
     function onSuccess(imageURI) {
@@ -159,9 +160,9 @@ var picFn = function(){
 
     navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
         destinationType: Camera.DestinationType.FILE_URI });
+};// End Camera Function
 
-};
-
+// Check Connection
 var connectionFn = function(){
         var networkState = navigator.connection.type;
 
@@ -176,8 +177,9 @@ var connectionFn = function(){
         states[Connection.NONE]     = 'No network connection';
 
         alert('Connection type: ' + states[networkState]);
-};
+};// End Check Connection
 
+// Check Geo Location
 var geoFn = function(){
 
     function gioSuccess(geoSuccessData){
@@ -189,9 +191,9 @@ var geoFn = function(){
     }
 
     navigator.geolocation.getCurrentPosition(geoSuccess, geolocationError);
+};// Check Geo Location
 
-};
-
+// End Global Functions
 
 $("#searchBtn").on("click", searchFn);
 $("#popular").on("click", popularFn);
@@ -199,3 +201,4 @@ $("#currentBtn").on("click", currentFn);
 $("#snapPic").on("click", picFn);
 $("#connection").on("click", connectionFn);
 $("#geoBtn").on("click", geoFn);
+
