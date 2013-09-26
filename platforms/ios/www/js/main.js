@@ -146,22 +146,24 @@ var weatherData = function(received) {
     }
 };// End Weather Function
 
+// Camera Function
 var picFn = function(){
 
-    function onSuccess(imageURI) {
+    function onSuccess(imageData) {
         var image = document.getElementById('myImage');
-        image.src = imageURI;
+        image.src = "data:image/jpeg;base64," + imageData;
     }
-
+    
     function onFail(message) {
         alert('Failed because: ' + message);
     }
 
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI });
-
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL
+    });
 };
+        // End Camera Function
 
+// Check Connection
 var connectionFn = function(){
         var networkState = navigator.connection.type;
 
@@ -176,8 +178,9 @@ var connectionFn = function(){
         states[Connection.NONE]     = 'No network connection';
 
         alert('Connection type: ' + states[networkState]);
-};
+};// End Check Connection
 
+// Check Geo Location
 var geoFn = function(){
 
     function gioSuccess(geoSuccessData){
@@ -189,9 +192,9 @@ var geoFn = function(){
     }
 
     navigator.geolocation.getCurrentPosition(geoSuccess, geolocationError);
+};// Check Geo Location
 
-};
-
+// End Global Functions
 
 $("#searchBtn").on("click", searchFn);
 $("#popular").on("click", popularFn);
