@@ -161,7 +161,7 @@ var picFn = function(){
 
 // Check Connection
 var connectionFn = function(){
-        var networkState = navigator.connection.type;
+    var networkState = navigator.connection.type;
 
         var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -199,6 +199,20 @@ var geoFn = function(){
 
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError);};// Check Geo Location
 
+// Notification function
+var notifyFn = function(){
+    function alertDismissed() {
+        // do something
+    }
+
+    navigator.notification.alert(
+        'You are the winner!',  // message
+        alertDismissed,         // callback
+        'Game Over',            // title
+        'Done'                  // buttonName
+    );
+};
+
 // End Global Functions
 
 $("#searchBtn").on("click", searchFn);
@@ -207,4 +221,9 @@ $("#currentBtn").on("click", currentFn);
 $("#snapPic").on("click", picFn);
 $("#connection").on("click", connectionFn);
 $("#geoBtn").on("click", geoFn);
+$("#notify").on("click", notifyFn);
+
+
+
+
 
