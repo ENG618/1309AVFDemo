@@ -8,7 +8,6 @@
 
 // loadImgs Function
 var loadImgs = function (results){
-    console.log(results);
 
     // example HTML for pics
     // <img src='{url}' alt='{username}' /><p>{fullname}, <br/><p>'{cpation}',</p>
@@ -26,7 +25,6 @@ var loadImgs = function (results){
 // Search Function
 var searchFn = function(){
     var searchTerm = $('#search').val();
-    console.log(searchTerm);
     if (searchTerm === "" ){
         alert('I am having trouble finding images of nothing, please try searching for something else');
     }else{
@@ -37,7 +35,6 @@ var searchFn = function(){
             type: 'GET',
             dataType: 'jsonp',
             success: function(received){
-                console.log(received);
                 $('#results li').remove();
                 $.each(received.data, function(index, photo) {
                     var stRes = photo.images.standard_resolution.url,
@@ -72,7 +69,7 @@ var popularFn = function(){
         type: 'GET',
         dataType: 'jsonp',
         success: function(received){
-            console.log=('received');
+            console.log=(received);
             $('#results li').remove();
             $.each(received.data, function(index, photo) {
                 var stRes = photo.images.standard_resolution.url,
@@ -161,7 +158,7 @@ var picFn = function(){
     navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL
     });
 };
-        // End Camera Function
+// End Camera Function
 
 // Check Connection
 var connectionFn = function(){
@@ -202,3 +199,4 @@ $("#currentBtn").on("click", currentFn);
 $("#snapPic").on("click", picFn);
 $("#connection").on("click", connectionFn);
 $("#geoBtn").on("click", geoFn);
+
