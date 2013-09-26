@@ -146,17 +146,17 @@ var weatherData = function(received) {
 // Camera Function
 var picFn = function(){
 
-    function onSuccess(imageData) {
+    function onSuccess(imageURI) {
         var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
+        image.src = imageURI;
     }
-    
+
     function onFail(message) {
         alert('Failed because: ' + message);
     }
 
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL
-    });
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI });
 };
 // End Camera Function
 
