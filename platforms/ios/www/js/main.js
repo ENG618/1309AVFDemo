@@ -93,7 +93,7 @@ var popularFn = function(){
     });
 
     $.getJSON(url, loadImgs);
-}; // End Display Popular Photos Function
+};// End Display Popular Photos Function
 
 // Current Weather Function
 var currentFn = function(){
@@ -157,8 +157,7 @@ var picFn = function(){
 
     navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
         destinationType: Camera.DestinationType.FILE_URI });
-};
-// End Camera Function
+};// End Camera Function
 
 // Check Connection
 var connectionFn = function(){
@@ -179,17 +178,26 @@ var connectionFn = function(){
 
 // Check Geo Location
 var geoFn = function(){
+    function geoSuccess(position) {
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              'Altitude: '          + position.coords.altitude          + '\n' +
+              'Accuracy: '          + position.coords.accuracy          + '\n' +
+              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+              'Heading: '           + position.coords.heading           + '\n' +
+              'Speed: '             + position.coords.speed             + '\n' +
+              'Timestamp: '         + position.timestamp                + '\n');
 
-    function gioSuccess(geoSuccessData){
-        console.log(geoSuccessData);
+
     }
 
-    function geoError(geoErrorMsg){
-        console.log(geoErrorMsg);
+    // onError Callback receives a PositionError object
+    //
+    function geoError(error) {
+        alert('message: ' + error.message + '\n');
     }
 
-    navigator.geolocation.getCurrentPosition(geoSuccess, geolocationError);
-};// Check Geo Location
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);};// Check Geo Location
 
 // End Global Functions
 
