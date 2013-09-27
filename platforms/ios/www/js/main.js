@@ -215,15 +215,17 @@ var notifyFn = function(){
 
 // End Global Functions
 
-$("#searchBtn").on("click", searchFn);
-$("#popular").on("click", popularFn);
-$("#currentBtn").on("click", currentFn);
-$("#snapPic").on("click", picFn);
-$("#connection").on("click", connectionFn);
-$("#geoBtn").on("click", geoFn);
-$("#notify").on("click", notifyFn);
+function onDeviceReady(){
+    $("#searchBtn").on("click", searchFn);
+    $("#popular").on("click", popularFn);
+    $("#currentBtn").on("click", currentFn);
+    $("#snapPic").on("click", picFn);
+    $("#connection").on("click", connectionFn);
+    $("#geoBtn").on("click", geoFn);
+    $("#notify").on("click", notifyFn);
+}
 
-
+document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
