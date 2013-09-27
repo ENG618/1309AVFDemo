@@ -4,6 +4,10 @@
 // Global Variables
 // var destinationType=navigator.camera.DestinationType;
 
+// Global Variables
+var pictureSource;   // picture source
+var destinationType; // sets the format of returned value
+
 // Global Functions
 
 // loadImgs Function
@@ -143,20 +147,22 @@ var weatherData = function(received) {
     }
 };// End Weather Function
 
+// Called if something bad happens.
+var onFail = function(message) {
+  alert('Failed because: ' + message);
+};
+
 // Camera Function
 var picFn = function(){
 
-    function onSuccess(imageURI) {
-        var image = document.getElementById('myImage');
-        image.src = imageURI;
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
+    function onSuccess(imageData) {
+        var recievedImg = "data:image/jpeg;base64," + imageData;
+        var pic = "<li><img src='" + recievedImg + "' alt='userPic' /></li>";
+        $('#takenPic').append(pic);
     }
 
     navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI });
+      destinationType: destinationType.DATA_URL });
 };// End Camera Function
 
 // Check Connection
@@ -206,16 +212,20 @@ var notifyFn = function(){
     }
 
     navigator.notification.alert(
-        'You are the winner!',  // message
+        'Testing notification services.  I will be linking this to inAppBrowser in the future for a mashup',  // message
         alertDismissed,         // callback
-        'Game Over',            // title
-        'Done'                  // buttonName
+        'Eric Garcia',            // title
+        'GO!'                  // buttonName
     );
 };
 
 // End Global Functions
 
 function onDeviceReady(){
+    pictureSource=navigator.camera.PictureSourceType;
+    destinationType=navigator.camera.DestinationType;
+
+
     $("#searchBtn").on("click", searchFn);
     $("#popular").on("click", popularFn);
     $("#currentBtn").on("click", currentFn);
