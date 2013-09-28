@@ -5,382 +5,379 @@
     Project 2
 -->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, height=device-height, width=device-width target-densitydpi=device-dpi" />
-        <!-- jQuery Call -->
-        <link href='css/lib/themes/default/jquery.mobile-1.3.2.min.css' rel='stylesheet' type='text/css' />
-        <!-- CSS Call -->
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
-        <!-- CSS media quires -->
-        <link rel='stylesheet' type='text/css' href='css/large.css' />
-        <link rel="stylesheet" type="text/css" media='only screen and (min-width:501px) and (max-width:899px)' href='css/medium.css'>
-        <link rel="stylesheet" type="text/css" media='only screen and (min-width:50px) and (max-width:500px)' href='css/small.css'>
-        <title>Memory Vault</title>
-    </head>
-    <body>
-        <!-- Home -->
-        <section data-role="page" class='page' id='home'>
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="homeNav">
-                <ul>
-                    <li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist" data-role="button">Home</a></li>
-                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
-                    <li><a href="cameraTest.html" data-icon="bars" data-role="button">Recent</a></li>
-                    <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
-                    <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
-                </ul>
-            </div><!-- /Navigation Side Panel -->
-            <!-- Header -->
-            <header data-role='header' data-position='fixed'>
-                <a href='#homeNav' data-icon='bars'>Menu</a>
-                <h1>Memory Vault</h1>
-            </header><!-- /Header -->            
-            <!-- Content -->
-            <article data-role='content'>
-                <h2>Data API's</h2>
-                <div>
-                    <ul data-role='listview' data-inset='true'>
-                        <li><a href="#instaSearch">Instagram</a></li>
-                        <li><a href="#weather">Weather</a></li>
-                    </ul>
-                </div>
-                <h2>Native Features</h2>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, height=device-height, target-densitydpi=device-dpi" />
+    <!-- jQuery Call -->
+    <link href='css/lib/themes/default/jquery.mobile-1.3.2.min.css' rel='stylesheet' type='text/css' />
+    <!-- CSS Call -->
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <!-- CSS media quires -->
+    <link rel='stylesheet' type='text/css' href='css/large.css' />
+    <link rel="stylesheet" type="text/css" media='only screen and (min-width:501px) and (max-width:899px)' href='css/medium.css'>
+    <link rel="stylesheet" type="text/css" media='only screen and (min-width:50px) and (max-width:500px)' href='css/small.css'>
+    <title>Memory Vault</title>
+</head>
+<body>
+    <!-- Home -->
+    <section data-role="page" class='page' id='home'>
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="homeNav">
+            <ul>
+                <li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist" data-role="button">Home</a></li>
+                <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
+                <li><a href="cameraTest.html" data-icon="bars" data-role="button">Recent</a></li>
+                <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
+                <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
+        <!-- Header -->
+        <header data-role='header' data-position='fixed'>
+            <a href='#homeNav' data-icon='bars'>Menu</a>
+            <h1>Memory Vault</h1>
+        </header><!-- /Header -->            
+        <!-- Content -->
+        <article data-role='content'>
+            <h2>Data API's</h2>
+            <div>
                 <ul data-role='listview' data-inset='true'>
-                    <li><a href="#addItem">Camera</a></li>
-                    <li><a href="#geo">Location</a></li>
-                    <!-- <li><button id='connection'>Check data connection</button></li> -->
-                    <!-- <li><button id='notify'>Notification</button></li> -->
+                    <li><a href="#instaSearch">Instagram</a></li>
+                    <li><a href="#weather">Weather</a></li>
                 </ul>
-                <button id='connection'>Check data connection</button>
-                <button id='notify'>Notification</button>
+            </div>
+            <h2>Native Features</h2>
+            <ul data-role='listview' data-inset='true'>
+                <li><a href="#addItem">Camera</a></li>
+                <li><a href="#geo">Location</a></li>
+            </ul>
+            <button id='connection'>Check data connection</button>
+            <button id='notify'>Notification</button>
+        </article><!-- /Content -->
+    </section><!-- /Home -->
 
-            </article><!-- /Content -->
-        </section><!-- /Home -->
+    <!-- Instagram -->
+    <section data-role='page' id='instaSearch'>
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="instaSearchNav">
+            <ul>
+                <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
+                <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
+                <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
+                <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
+                <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
+        <!-- Header -->
+        <header data-role='header' data-position='fixed'>
+            <a href='#instaSearchNav' data-icon='bars'>Menu</a>
+            <h1>Memory Vault</h1>
+        </header><!-- /Header -->            
 
-        <!-- Instagram -->
-        <section data-role='page' id='instaSearch'>
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="instaSearchNav">
-                <ul>
-                    <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
-                    <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
-                    <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
-                    <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
-                </ul>
-            </div><!-- /Navigation Side Panel -->
-            <!-- Header -->
-            <header data-role='header' data-position='fixed'>
-                <a href='#instaSearchNav' data-icon='bars'>Menu</a>
-                <h1>Memory Vault</h1>
-            </header><!-- /Header -->            
+        <article data-role='content'>
+            <h2>Instagram Search</h2>
+            <input type="search" id="search" value="" placeholder="Instagram Serch">
+            <button id='searchBtn'>Search</button>
+            <label>Or search popular images</label>
+            <button id='popular'>Popular</button>
+            <ul id='results'>
 
-            <article data-role='content'>
-                <h2>Instagram Search</h2>
-                    <input type="search" id="search" value="" placeholder="Instagram Serch">
-                    <button id='searchBtn'>Search</button>
-                <label>Or search popular images</label>
-                <button id='popular'>Popular</button>
-                <ul id='results'>
+            </ul>
+        </article>
+    </section><!-- /Instagram -->
 
-                </ul>
-            </article>
-        </section><!-- /Instagram -->
+    <!-- Weather -->
+    <section data-role='page' id='weather'>
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="weatherNav">
+            <ul>
+                <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
+                <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
+                <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
+                <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
+                <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
+        <!-- Header -->
+        <header data-role='header' data-position='fixed'>
+            <a href='#weatherNav' data-icon='bars'>Menu</a>
+            <h1>Memory Vault</h1>
+        </header><!-- /Header -->            
+        
+        <article data-role='content'>
+            <h2>Weather</h2>
+            <input type="search" name="password" id="zipSearch" value="" placeholder="5-digit zip code">
+            <button id='currentBtn'>Check Weather</button>
+            <ul id='weatherResults'>
+                <li>Feels Like: <em id='feelsLikeAvg'></em></li>
+                <li>Max Temp: <em id='tempMax'></em></li>
+                <li>Min Temp: <em id='tempMin'></em></li>
+                <li>Average Temp: <em id='tempAvg'></em></li>
+                <li>Average Wind Speed: <em id='windSpdAvg'></em></li>
+            </ul>
+        </article>
+    </section>
 
-        <!-- Weather -->
-        <section data-role='page' id='weather'>
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="weatherNav">
-                <ul>
-                    <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
-                    <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
-                    <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
-                    <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
-                </ul>
-            </div><!-- /Navigation Side Panel -->
-            <!-- Header -->
-            <header data-role='header' data-position='fixed'>
-                <a href='#weatherNav' data-icon='bars'>Menu</a>
-                <h1>Memory Vault</h1>
-            </header><!-- /Header -->            
-            
-            <article data-role='content'>
-                <h2>Weather</h2>
-                <input type="search" name="password" id="zipSearch" value="" placeholder="5-digit zip code">
-                <button id='currentBtn'>Check Weather</button>
-                <ul id='weatherResults'>
-                    <li>Feels Like: <em id='feelsLikeAvg'></em></li>
-                    <li>Max Temp: <em id='tempMax'></em></li>
-                    <li>Min Temp: <em id='tempMin'></em></li>
-                    <li>Average Temp: <em id='tempAvg'></em></li>
-                    <li>Average Wind Speed: <em id='windSpdAvg'></em></li>
-                </ul>
-            </article>
-        </section>
+    <!-- Add Item Page -->
+    <section data-role="page" id="addItem">
 
-        <!-- Add Item Page -->
-        <section data-role="page" id="addItem">
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="addItemNav">
+            <ul>
+                <li><a href="#home" data-icon="home" data-role="button" data-transition="slide">Home</a></li>
+                <li><a href="#addItem" class="ui-btn-active ui-state-persist" data-icon="plus" data-role="button" data-transition="slide">New Memory</a></li>
+                <li><a href="#recentMem" data-icon="bars" data-role="button" data-transition="slide">Recent</a></li>
+                <li><a href="#aboutUs" data-icon="info" data-role="button" data-transition="slide">About</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
 
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="addItemNav">
-                <ul>
-                    <li><a href="#home" data-icon="home" data-role="button" data-transition="slide">Home</a></li>
-                    <li><a href="#addItem" class="ui-btn-active ui-state-persist" data-icon="plus" data-role="button" data-transition="slide">New Memory</a></li>
-                    <li><a href="#recentMem" data-icon="bars" data-role="button" data-transition="slide">Recent</a></li>
-                    <li><a href="#aboutUs" data-icon="info" data-role="button" data-transition="slide">About</a></li>
-                </ul>
-            </div><!-- /Navigation Side Panel -->
+        <!-- Header -->
+        <header data-role="header" data-position="fixed">
+            <a href="#addItemNav" data-icon="bars" >Menu</a>
+            <h1>Memory Vault</h1>
+        </header> <!-- /Header -->
 
-            <!-- Header -->
-            <header data-role="header" data-position="fixed">
-                <a href="#addItemNav" data-icon="bars" >Menu</a>
-                <h1>Memory Vault</h1>
-            </header> <!-- /Header -->
+        <!-- Content -->
+        <article data-role='content'>
+            <h2>Add a new memory!</h2>
+            <button id='snapPic'>Take picture</button>
+            <ul id='takenPic'>
 
-            <!-- Content -->
-            <article data-role='content'>
-                <h2>Add a new memory!</h2>
-                <button id='snapPic'>Take picture</button>
-                <ul id='takenPic'>
+            </ul>
+        </article><!-- /Content -->     
+    </section><!-- /Add Item Page -->
 
-                </ul>
-            </article><!-- /Content -->     
-        </section><!-- /Add Item Page -->
+    <!-- Geo Page -->
+    <section data-role='page' id='geo'>
+        
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="geoNav">
+            <ul>
+                <li><a href="#home" data-icon="home" data-role="button" data-transition="slide">Home</a></li>
+                <li><a href="#addItem" class="ui-btn-active ui-state-persist" data-icon="plus" data-role="button" data-transition="slide">New Memory</a></li>
+                <li><a href="#recentMem" data-icon="bars" data-role="button" data-transition="slide">Recent</a></li>
+                <li><a href="#aboutUs" data-icon="info" data-role="button" data-transition="slide">About</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
 
-        <!-- Geo Page -->
-        <section data-role='page' id='geo'>
-            
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="geoNav">
-                <ul>
-                    <li><a href="#home" data-icon="home" data-role="button" data-transition="slide">Home</a></li>
-                    <li><a href="#addItem" class="ui-btn-active ui-state-persist" data-icon="plus" data-role="button" data-transition="slide">New Memory</a></li>
-                    <li><a href="#recentMem" data-icon="bars" data-role="button" data-transition="slide">Recent</a></li>
-                    <li><a href="#aboutUs" data-icon="info" data-role="button" data-transition="slide">About</a></li>
-                </ul>
-            </div><!-- /Navigation Side Panel -->
+        <!-- Header -->
+        <header data-role="header" data-position="fixed">
+            <a href="#geoNav" data-icon="bars" >Menu</a>
+            <h1>Memory Vault</h1>
+        </header> <!-- /Header -->
 
-            <!-- Header -->
-            <header data-role="header" data-position="fixed">
-                <a href="#geoNav" data-icon="bars" >Menu</a>
-                <h1>Memory Vault</h1>
-            </header> <!-- /Header -->
+        <article data-role='content'>
+            <h2>Geo Location</h2>                
+            <button id='geoBtn'>Check your location</button>
+            <ul id='geoResults'></ul>
+        </article>
+    </section>
 
-            <article data-role='content'>
-                <h2>Geo Location</h2>                
-                <button id='geoBtn'>Check your location</button>
-                <ul id='geoResults'></ul>
-            </article>
-        </section>
+    <!-- Discussions -->
+    <section data-role='page' id='discussions'>
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="discussionsNav">
+            <ul>
+                <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
+                <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
+                <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
+                <li><a href="#discussions" class="ui-btn-active ui-state-persist" data-icon="edit" data-role="button">Discussions</a></li>
+                <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
 
+        <!-- Header -->
+        <header data-role="header" data-position="fixed">
+            <a href="#discussionsNav" data-icon="bars" >Menu</a>
+            <h1>Memory Vault</h1>
+        </header> <!-- /Header -->
         <!-- Discussions -->
-        <section data-role='page' id='discussions'>
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="discussionsNav">
-                <ul>
-                    <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
-                    <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
-                    <li><a href="#discussions" class="ui-btn-active ui-state-persist" data-icon="edit" data-role="button">Discussions</a></li>
-                    <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
-                </ul>
-            </div><!-- /Navigation Side Panel -->
+        <article data-role='content'>
+            <!-- Collapsible Set -->
+            <h2>Discussions</h2>
+            <div data-role="collapsible-set">
 
-            <!-- Header -->
-            <header data-role="header" data-position="fixed">
-                <a href="#discussionsNav" data-icon="bars" >Menu</a>
-                <h1>Memory Vault</h1>
-            </header> <!-- /Header -->
-            <!-- Discussions -->
-            <article data-role='content'>
-                <!-- Collapsible Set -->
-                <h2>Discussions</h2>
-                <div data-role="collapsible-set">
+                <!-- Week1 -->
+                <div data-role="collapsible" data-theme="a" data-content-theme="c" >
+                    <h2>Week 1</h2>
+                    <h2>Discuss: Data Research, Project Intent</h2>
+                    <h3>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</h3>
+                    <p>There are a lot of perks for using Twitter or Gmail to login to different sites.  The number one most obvious one is a lot of time people don’t like having so many different usernames and passwords, so it makes it easier for the user to use what they are already familiar with to be a part of whatever app or site they are visiting.  Another perk is giving them a sense of security knowing they are securely logging in.  Another less obvious perk is with Twitter, it also integrates with the user's Twitter account, enabling them to share more easily, and effectively advertises for your app or site.</p>
+                    <h3>Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</h3>
+                    <p>JSON-P or JSON with Padding is vitally important to app that need outside data.  This method provides a workaround for the same origin policy.  It a</p>
+                    <h3>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</h3>
+                    <p>Camera - iOnRoad, Sanpper, GeoCam, and many others <br>Geo Locate - TrackProfiler, Real Estate Listings for Android, Zillow iPhone App, GMap Friends <br>Contacts - SMS the Team, FbFriendFinder.com, GMap Friends</p>
+                    <h3>Please describe any design and functionality intentions you may have for your Demo app components this month.</h3>
+                    <p>My app is a please to store and capture memories.  I definitely would like to integrate the camera into my app, to add pictures to stored memories.  Another mash up I would like to integrate would be automatically adding the weather report via weather api.  I would then like to be able to share those memories (all details included, or specified details) to various social networks as well as sms and email.</p>
+                    <h3>Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.</h3>
+                    <p>The best thing I have learned to improve my workflow is...start early!  There is always some bump in the road, and it always takes a little longer than expected to complete certain tasks.  I like to get as much of a foundation as I can without researching anything so that I know my ideas are original and I have a steady direction to approach one I start researching and trying to find direction.  Another huge this for me is utilizing console logs, error messages early and often.  It is so much better to use the tools that we </p>
+                </div> <!-- /Week1 -->
 
-                    <!-- Week1 -->
-                    <div data-role="collapsible" data-theme="a" data-content-theme="c" >
-                        <h2>Week 1</h2>
-                        <h2>Discuss: Data Research, Project Intent</h2>
-                        <h3>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</h3>
-                        <p>There are a lot of perks for using Twitter or Gmail to login to different sites.  The number one most obvious one is a lot of time people don’t like having so many different usernames and passwords, so it makes it easier for the user to use what they are already familiar with to be a part of whatever app or site they are visiting.  Another perk is giving them a sense of security knowing they are securely logging in.  Another less obvious perk is with Twitter, it also integrates with the user's Twitter account, enabling them to share more easily, and effectively advertises for your app or site.</p>
-                        <h3>Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</h3>
-                        <p>JSON-P or JSON with Padding is vitally important to app that need outside data.  This method provides a workaround for the same origin policy.  It a</p>
-                        <h3>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</h3>
-                        <p>Camera - iOnRoad, Sanpper, GeoCam, and many others <br>Geo Locate - TrackProfiler, Real Estate Listings for Android, Zillow iPhone App, GMap Friends <br>Contacts - SMS the Team, FbFriendFinder.com, GMap Friends</p>
-                        <h3>Please describe any design and functionality intentions you may have for your Demo app components this month.</h3>
-                        <p>My app is a please to store and capture memories.  I definitely would like to integrate the camera into my app, to add pictures to stored memories.  Another mash up I would like to integrate would be automatically adding the weather report via weather api.  I would then like to be able to share those memories (all details included, or specified details) to various social networks as well as sms and email.</p>
-                        <h3>Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.</h3>
-                        <p>The best thing I have learned to improve my workflow is...start early!  There is always some bump in the road, and it always takes a little longer than expected to complete certain tasks.  I like to get as much of a foundation as I can without researching anything so that I know my ideas are original and I have a steady direction to approach one I start researching and trying to find direction.  Another huge this for me is utilizing console logs, error messages early and often.  It is so much better to use the tools that we </p>
-                    </div> <!-- /Week1 -->
+                <!-- Week 2 -->
+                <div data-role="collapsible" data-theme="a" data-content-theme="c">
+                    <h2>Week 2</h2>
+                    <h2>Discuss: Accessibility</h2>
+                    <h3>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</h3>
+                    <p>I don’t think there is much to update in my code, other than I realized I did miss a couple of labels for input fields.  We have been taught all along to make our lives easier and in turn make our code more accessible.  That is why we always try to use proper semantics rather than just using a lot of div’s or non specific tags.</p>
+                    <h3>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</h3>
+                    <p>I’m not impaired in any way other than I don't like to read much, and I often times use the text to speech function of my macbook to read articles and even our assignments to me from time to time.  Though often times it gets pretty annoying because it doesn't respect punctuation or times goes faster than you can comprehend that robotic voices; however, when I’m on my android device and use applications like Endomondo, and Google Now, that use the Google text to speech engine it is a much more enjoyable experience.  It think implement ing a better speech engine would be a huge step in the right direction.</p>
+                    <p>Other issues I saw with the demo’s were that often times the sites were not very friendly and would often just say link, link, link, and image not explaining what the link was for now what the image was of.  That effectively makes the software completely useless, because who knows what you are looking at let alone cracking too.  I don’t know that there is a way of fixing the screen reading software...what really needs to happen is the developers of these sites need to be fixed.</p>
+                    <h3>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</h3>
+                    <p>I haven't used iOS much (or really at all till I received my iPad) and don’t know how accessibility works in iOS but I'm sure there are features built in that make them work fairly well for the visually impaired.  I do know Android pretty well though and have messed around with the talkback application, and being that they have such an advance text to speech engine now, and how well it integrates throughout the ui is very well.  I even enabled talkback for a while just to see how it worked throughout different parts of the ui.  Furthermore there are a lot of apps in the market that are designed to make the phone more usable.</p>
+                    <p>As I mentioned earlier with my macbook, using the speech function in the control + click menu is very useful to easily assist visually impaired, not so much for the blink. I have also enabled access for assistive devices on my computer, and it call out the time to me on the hour and lets me know when applications need my attention.</p>
+                    <h3>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</h3>
+                    <p>Talkback - is the stock app that ships with Android to handle accessibility</p>
+                    <p>Mobile Accessibility Demo US. is another android app that seems to be pretty good, and has some favorable reviews.  It is designed to help the visually impaired to do the basic functions including phone, sms, web, calendar, and several other.</p>
+                </div> <!-- /Week 2 -->
 
-                    <!-- Week 2 -->
-                    <div data-role="collapsible" data-theme="a" data-content-theme="c">
-                        <h2>Week 2</h2>
-                        <h2>Discuss: Accessibility</h2>
-                        <h3>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</h3>
-                        <p>I don’t think there is much to update in my code, other than I realized I did miss a couple of labels for input fields.  We have been taught all along to make our lives easier and in turn make our code more accessible.  That is why we always try to use proper semantics rather than just using a lot of div’s or non specific tags.</p>
-                        <h3>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</h3>
-                        <p>I’m not impaired in any way other than I don't like to read much, and I often times use the text to speech function of my macbook to read articles and even our assignments to me from time to time.  Though often times it gets pretty annoying because it doesn't respect punctuation or times goes faster than you can comprehend that robotic voices; however, when I’m on my android device and use applications like Endomondo, and Google Now, that use the Google text to speech engine it is a much more enjoyable experience.  It think implement ing a better speech engine would be a huge step in the right direction.</p>
-                        <p>Other issues I saw with the demo’s were that often times the sites were not very friendly and would often just say link, link, link, and image not explaining what the link was for now what the image was of.  That effectively makes the software completely useless, because who knows what you are looking at let alone cracking too.  I don’t know that there is a way of fixing the screen reading software...what really needs to happen is the developers of these sites need to be fixed.</p>
-                        <h3>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</h3>
-                        <p>I haven't used iOS much (or really at all till I received my iPad) and don’t know how accessibility works in iOS but I'm sure there are features built in that make them work fairly well for the visually impaired.  I do know Android pretty well though and have messed around with the talkback application, and being that they have such an advance text to speech engine now, and how well it integrates throughout the ui is very well.  I even enabled talkback for a while just to see how it worked throughout different parts of the ui.  Furthermore there are a lot of apps in the market that are designed to make the phone more usable.</p>
-                        <p>As I mentioned earlier with my macbook, using the speech function in the control + click menu is very useful to easily assist visually impaired, not so much for the blink. I have also enabled access for assistive devices on my computer, and it call out the time to me on the hour and lets me know when applications need my attention.</p>
-                        <h3>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</h3>
-                        <p>Talkback - is the stock app that ships with Android to handle accessibility</p>
-                        <p>Mobile Accessibility Demo US. is another android app that seems to be pretty good, and has some favorable reviews.  It is designed to help the visually impaired to do the basic functions including phone, sms, web, calendar, and several other.</p>
-                    </div> <!-- /Week 2 -->
-
-                    <!-- Week 3 -->
-                    <div data-role="collapsible" data-theme="a" data-content-theme="c">
-                        <h2>Week 3</h2>
-                        <h2>Discuss: Industry Research</h2>
-                        <h3>What are the 'top selling' app categories in the U.S.? Japan? Great Britain?</h3>
-                        <p>Per my research the U.S. and Great Britain's top apps are pretty much the same with  social apps, and games coming out on top ("Google play store,," ).  When looking at Japan they seem to pretty close to the same but have a lot more productivity apps on the list as well.</p>
-                        <h3>Based on your three answers above, what might you infer about each of the markets listed?</h3>
-                        <p>There is a lot to get from this, the biggest things people are looking for is having fun, and staying connected.  While in Japan they are also looking for way to get things done better and faster.  I think y</p>
-                        <h3>What is the average cost and bandwidth limits per user (in general) in each of the three markets? How may this impact development?</h3>
-                        <ul>
-                            <li>U.S. - $59.82/5 GB</li>
-                            <li>Japan - $58.24/5GB</li>
-                            <li>Great Britain - $62.01/5 GB</li>
-                        </ul>
-                        <p>(Tencer, 2013)</p>
-                        <h3>And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice.</h3>
-                        <p>I would say the best strategy is to take on an app the combines the 2 most used app categories.  Creating a social gaming app that helps people have fun and stay connected at the same time.</p>
-                        <p>Secondly, I would say a social productivity app.  Something along the lines of social shopping apps to where you can easily see what friends and family are buying and get similar products.</p>
-                        <h3>References:</h3>
-                        <p><em>Google play store, united states, top overall, free, q2 2013. (n.d.). Retrieved from </em><a href="http://www.distimo.com/leaderboards/google-play-store/united-states/top-overall/free/quarter">http://www.distimo.com/leaderboards/google-play-store/united-states/top-overall/free/quarter</a></p>
-                        <p><em>Tencer, D. (2013, July 05). Wireless prices report finds consumer bills shrinking, but data costs still out of control. Retrieved from </em><a href="http://www.huffingtonpost.ca/2013/07/05/wireless-data-prices-canada-internet-costs_n_3551353.html">http://www.huffingtonpost.ca/2013/07/05/wireless-data-prices-canada-internet-costs_n_3551353.html</a></p>
-                    </div> <!-- /Week 3 -->
-
-                    <!-- Week 4 -->
-                    <div data-role="collapsible" data-theme="a" data-content-theme="c">
-                        <h2>Week 4</h2>
-                        <h2>I can predict the future!</h2>
-                        <p>The week 4 discussion will be placed here once it has happened!!</p>
-                    </div> <!-- /Week 4 -->
-                </div><!-- /Collapsible Set -->
-
-            </article><!-- /Discussions -->
-        </section><!-- /Discussions -->
-
-        <!-- More Info -->
-        <section data-role="page" id="moreInfo">
-
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="moreInfonav">
-                <ul>
-                    <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
-                    <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
-                    <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
-                    <li><a href="#moreInfo" class="ui-btn-active ui-state-persist" data-icon="info" data-role="button">More Info</a></li>
-                </ul>
-            </div><!-- /Navigation Side Panel -->
-
-            <!-- Header -->
-            <header data-role="header" data-position="fixed">
-                <a href="#moreInfonav" data-icon="bars" >Menu</a>
-                <h1>Memory Vault</h1>
-            </header> <!-- /Header -->
-
-            <!-- Content -->
-            <article data-role="content">
-                <h2>Useful Links</h2>
-                <ul data-role="listview" data-inset="true">
-                    <li><a href="http://eng618.github.io/1309AVFDemo/platforms/android/assets/www/index.html" data-ajax='false'>Android gh-pages</a></li>
-                    <li><a href="http://eng618.github.io/1309AVFDemo/platforms/ios/www/index.html" data-ajax='false'>iOS gh-pages</a></li>
-                    <li><a href="https://github.com/ENG618/1309AVFDemo" data-ajax='false'>Git Repo</a></li>
-                </ul>
-
-                <h2>Native Components</h2>
-                <div>
-                    <ul data-role='listview' data-inset='true'>
-                        <li>Camera</li>
-                        <li>GPS</li>
-                        <li>Contacts</li>
-                        <li>Email</li>
-                        <li>Storage</li>
+                <!-- Week 3 -->
+                <div data-role="collapsible" data-theme="a" data-content-theme="c">
+                    <h2>Week 3</h2>
+                    <h2>Discuss: Industry Research</h2>
+                    <h3>What are the 'top selling' app categories in the U.S.? Japan? Great Britain?</h3>
+                    <p>Per my research the U.S. and Great Britain's top apps are pretty much the same with  social apps, and games coming out on top ("Google play store,," ).  When looking at Japan they seem to pretty close to the same but have a lot more productivity apps on the list as well.</p>
+                    <h3>Based on your three answers above, what might you infer about each of the markets listed?</h3>
+                    <p>There is a lot to get from this, the biggest things people are looking for is having fun, and staying connected.  While in Japan they are also looking for way to get things done better and faster.  I think y</p>
+                    <h3>What is the average cost and bandwidth limits per user (in general) in each of the three markets? How may this impact development?</h3>
+                    <ul>
+                        <li>U.S. - $59.82/5 GB</li>
+                        <li>Japan - $58.24/5GB</li>
+                        <li>Great Britain - $62.01/5 GB</li>
                     </ul>
-                </div>
-                <h2>Data API's</h2>
-                <div data-role='collapsible-set'>
-                    <div data-role='collapsible' data-theme="a" data-content-theme="c">
-                        <h3>Instagram</h3>
-                        <p>required api</p>
-                    </div>
-                    <div data-role='collapsible' data-theme="a" data-content-theme="c">
-                        <h3>Weather Bug</h3>
-                        <p>or other weather api</p>
-                    </div>
-                    <div data-role='collapsible' data-theme="a" data-content-theme="c">
-                        <h3>Social</h3>
-                        <p>Google+ <br> Facebook <br> Twiter <br> Email</p>
-                    </div>
-                </div>
+                    <p>(Tencer, 2013)</p>
+                    <h3>And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice.</h3>
+                    <p>I would say the best strategy is to take on an app the combines the 2 most used app categories.  Creating a social gaming app that helps people have fun and stay connected at the same time.</p>
+                    <p>Secondly, I would say a social productivity app.  Something along the lines of social shopping apps to where you can easily see what friends and family are buying and get similar products.</p>
+                    <h3>References:</h3>
+                    <p><em>Google play store, united states, top overall, free, q2 2013. (n.d.). Retrieved from </em><a href="http://www.distimo.com/leaderboards/google-play-store/united-states/top-overall/free/quarter">http://www.distimo.com/leaderboards/google-play-store/united-states/top-overall/free/quarter</a></p>
+                    <p><em>Tencer, D. (2013, July 05). Wireless prices report finds consumer bills shrinking, but data costs still out of control. Retrieved from </em><a href="http://www.huffingtonpost.ca/2013/07/05/wireless-data-prices-canada-internet-costs_n_3551353.html">http://www.huffingtonpost.ca/2013/07/05/wireless-data-prices-canada-internet-costs_n_3551353.html</a></p>
+                </div> <!-- /Week 3 -->
 
-                <!-- Collapsible Set -->
-                <div data-role="collapsible-set">
-                    <!-- About Author -->
-                    <h2>Developer Info</h2>
-                    <div data-role="collapsible" data-theme="a" data-content-theme="c">
-                        <h2>Find me on</h2>
-                        <ul data-role="listview">
-                            <li><a href="https://plus.google.com/u/0/117454855184907306981/posts" data-ajax='false'>Google+</a></li>
-                            <li><a href="https://www.facebook.com/garciaericn" data-ajax='false'>Facebook</a></li>
-                            <li><a href="https://twitter.com/NexusGenMods" data-ajax='false'>Twiter</a></li>
-                        </ul>
-                    </div> <!-- /About Author -->
+                <!-- Week 4 -->
+                <div data-role="collapsible" data-theme="a" data-content-theme="c">
+                    <h2>Week 4</h2>
+                    <h2>I can predict the future!</h2>
+                    <p>The week 4 discussion will be placed here once it has happened!!</p>
+                </div> <!-- /Week 4 -->
+            </div><!-- /Collapsible Set -->
 
+        </article><!-- /Discussions -->
+    </section><!-- /Discussions -->
 
-                    <!-- Credits -->
-                    <div data-role="collapsible" data-theme="a" data-content-theme="c">
-                        <h2>Credits</h2>
-                        <ul data-role="listview">
-                            <li><a href="http://www.lynda.com/tutorial/100222?org=fullsail.edu" data-ajax='false'>Git Essential Training</a></li>
-                            <li><a href="http://www.lynda.com/tutorial/99541?org=fullsail.edu" data-ajax='false'>Up and Running with PhoneGap</a></li>
-                            <li><a href="http://view.jquerymobile.com/1.3.1/dist/demos/" data-ajax='false'>jQuery Mobile</a></li>
-                        </ul>
-                    </div> <!-- /Credits -->
-                </div><!-- /Collapsible Set -->
+    <!-- More Info -->
+    <section data-role="page" id="moreInfo">
 
-            </article> <!-- /Content -->
-        </section> <!-- /More Info -->
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="moreInfonav">
+            <ul>
+                <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
+                <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
+                <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
+                <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
+                <li><a href="#moreInfo" class="ui-btn-active ui-state-persist" data-icon="info" data-role="button">More Info</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
 
-        <!-- Under construction -->
-        <section data-role='page' id='underCon'>
-            <!-- Navigation Side Panel -->
-            <div data-role="panel" data-position="left" id="underConNav">
-                <ul>
-                    <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
-                    <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
-                    <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
-                    <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
-                    <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
+        <!-- Header -->
+        <header data-role="header" data-position="fixed">
+            <a href="#moreInfonav" data-icon="bars" >Menu</a>
+            <h1>Memory Vault</h1>
+        </header> <!-- /Header -->
+
+        <!-- Content -->
+        <article data-role="content">
+            <h2>Useful Links</h2>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="http://eng618.github.io/1309AVFDemo/platforms/android/assets/www/index.html" data-ajax='false'>Android gh-pages</a></li>
+                <li><a href="http://eng618.github.io/1309AVFDemo/platforms/ios/www/index.html" data-ajax='false'>iOS gh-pages</a></li>
+                <li><a href="https://github.com/ENG618/1309AVFDemo" data-ajax='false'>Git Repo</a></li>
+            </ul>
+
+            <h2>Native Components</h2>
+            <div>
+                <ul data-role='listview' data-inset='true'>
+                    <li>Camera</li>
+                    <li>GPS</li>
+                    <li>Contacts</li>
+                    <li>Email</li>
+                    <li>Storage</li>
                 </ul>
-            </div><!-- /Navigation Side Panel -->
+            </div>
+            <h2>Data API's</h2>
+            <div data-role='collapsible-set'>
+                <div data-role='collapsible' data-theme="a" data-content-theme="c">
+                    <h3>Instagram</h3>
+                    <p>required api</p>
+                </div>
+                <div data-role='collapsible' data-theme="a" data-content-theme="c">
+                    <h3>Weather Bug</h3>
+                    <p>or other weather api</p>
+                </div>
+                <div data-role='collapsible' data-theme="a" data-content-theme="c">
+                    <h3>Social</h3>
+                    <p>Google+ <br> Facebook <br> Twiter <br> Email</p>
+                </div>
+            </div>
 
-            <!-- Header -->
-            <header data-role="header" data-position="fixed">
-                <a href="#underConNav" data-icon="bars" >Menu</a>
-                <h1>Memory Vault</h1>
-            </header> <!-- /Header -->
+            <!-- Collapsible Set -->
+            <div data-role="collapsible-set">
+                <!-- About Author -->
+                <h2>Developer Info</h2>
+                <div data-role="collapsible" data-theme="a" data-content-theme="c">
+                    <h2>Find me on</h2>
+                    <ul data-role="listview">
+                        <li><a href="https://plus.google.com/u/0/117454855184907306981/posts" data-ajax='false'>Google+</a></li>
+                        <li><a href="https://www.facebook.com/garciaericn" data-ajax='false'>Facebook</a></li>
+                        <li><a href="https://twitter.com/NexusGenMods" data-ajax='false'>Twiter</a></li>
+                    </ul>
+                </div> <!-- /About Author -->
 
-            <article data-role='content'>
-                <h2>Under construction</h2>
-                <p>Please check back later.</p>
-            </article>        
-        </section><!-- /Under construction -->
 
-        <!-- jQuery Call -->
-        <script src='js/lib/jquery.js' type='text/javascript'></script>
-        <script src='js/lib/jquery.mobile-1.3.2.min.js' type='text/javascript'></script>
-        <!-- Cordova/PhoneGap Call -->
-        <script src='cordova.js' type='text/javascript'></script>
-        <!-- JS Call -->
-        <script src='js/main.js' type='text/javascript'></script>
-    </body>
+                <!-- Credits -->
+                <div data-role="collapsible" data-theme="a" data-content-theme="c">
+                    <h2>Credits</h2>
+                    <ul data-role="listview">
+                        <li><a href="http://www.lynda.com/tutorial/100222?org=fullsail.edu" data-ajax='false'>Git Essential Training</a></li>
+                        <li><a href="http://www.lynda.com/tutorial/99541?org=fullsail.edu" data-ajax='false'>Up and Running with PhoneGap</a></li>
+                        <li><a href="http://view.jquerymobile.com/1.3.1/dist/demos/" data-ajax='false'>jQuery Mobile</a></li>
+                    </ul>
+                </div> <!-- /Credits -->
+            </div><!-- /Collapsible Set -->
+
+        </article> <!-- /Content -->
+    </section> <!-- /More Info -->
+
+    <!-- Under construction -->
+    <section data-role='page' id='underCon'>
+        <!-- Navigation Side Panel -->
+        <div data-role="panel" data-position="left" id="underConNav">
+            <ul>
+                <li><a href="#home" data-icon="home" data-role="button">Home</a></li>
+                <li><a href="#addItem" data-icon="plus" data-role="button">New Memory</a></li>
+                <li><a href="#underCon" data-icon="bars" data-role="button">Recent</a></li>
+                <li><a href="#discussions" data-icon="edit" data-role="button">Discussions</a></li>
+                <li><a href="#moreInfo" data-icon="info" data-role="button">More Info</a></li>
+            </ul>
+        </div><!-- /Navigation Side Panel -->
+
+        <!-- Header -->
+        <header data-role="header" data-position="fixed">
+            <a href="#underConNav" data-icon="bars" >Menu</a>
+            <h1>Memory Vault</h1>
+        </header> <!-- /Header -->
+
+        <article data-role='content'>
+            <h2>Under construction</h2>
+            <p>Please check back later.</p>
+        </article>        
+    </section><!-- /Under construction -->
+
+    <!-- jQuery Call -->
+    <script src='js/lib/jquery.js' type='text/javascript'></script>
+    <script src='js/lib/jquery.mobile-1.3.2.min.js' type='text/javascript'></script>
+    <!-- Cordova/PhoneGap Call -->
+    <script src='cordova.js' type='text/javascript'></script>
+    <!-- JS Call -->
+    <script src='js/main.js' type='text/javascript'></script>
+</body>
 </html>

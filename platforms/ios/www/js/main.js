@@ -28,17 +28,88 @@ var loadImgs = function (results){
 
 // Search Function
 var searchFn = function(){
-    var searchTerm = $('#search').val();
-    if (searchTerm === "" ){
-        alert('I am having trouble finding images of nothing, please try searching for something else');
+
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    // if/else to check network state
+    if (states[networkState] === 'No network connection') {
+        alert('Please connect to the internet to access this function');
     }else{
-        confirm('Are you sure you want to search for "' + searchTerm + '"');
-        var url = 'https://api.instagram.com/v1/tags/' + searchTerm + '/media/recent?callback=?&amp;client_id=bdd3abebae3a4d6385255d64427aeaff';
+
+        var searchTerm = $('#search').val();
+        // if/else to check if search term is blank
+        if (searchTerm === "" ){
+            alert('I am having trouble finding images of nothing, please try searching for something else');
+        }else{
+            confirm('Are you sure you want to search for "' + searchTerm + '"');
+            var url = 'https://api.instagram.com/v1/tags/' + searchTerm + '/media/recent?callback=?&amp;client_id=bdd3abebae3a4d6385255d64427aeaff';
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'jsonp',
+                success: function(received){
+                    $('#results li').remove();
+                    $.each(received.data, function(index, photo) {
+                        var stRes = photo.images.standard_resolution.url,
+                        user_id = photo.user.id,
+                        fullName = photo.user.full_name,
+                        likes = photo.likes,
+                        pic = "<li><img src='" + stRes + "' alt='" + user_id + "' /><h3> Created by: " + fullName + ", Likes: " + likes + "<h3></li>";
+
+                        $('#results').append(pic);
+                    });
+                }
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+            $.getJSON(url, loadImgs);
+        }// End if/else to check if search term is blank
+    }// End if/else to check network state
+};// End Search Function
+
+// Display Popular Photos Function
+var popularFn = function(){
+
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+    // if/else to check network connection
+    if (states[networkState] === 'No network connection') {
+        alert('Please connect to the internet to access this function');
+    }else{
+        confirm('Do you want to display all the popular photos?');
+        var url = 'https://api.instagram.com/v1/media/popular?callback+?&amp;client_id=bdd3abebae3a4d6385255d64427aeaff';
         $.ajax({
             url: url,
             type: 'GET',
             dataType: 'jsonp',
             success: function(received){
+                console.log=(received);
                 $('#results li').remove();
                 $.each(received.data, function(index, photo) {
                     var stRes = photo.images.standard_resolution.url,
@@ -60,43 +131,9 @@ var searchFn = function(){
         .always(function() {
             console.log("complete");
         });
+
         $.getJSON(url, loadImgs);
-    }
-};// End Search Function
-
-// Display Popular Photos Function
-var popularFn = function(){
-    confirm('Do you want to display all the popular photos?');
-    var url = 'https://api.instagram.com/v1/media/popular?callback+?&amp;client_id=bdd3abebae3a4d6385255d64427aeaff';
-    $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: 'jsonp',
-        success: function(received){
-            console.log=(received);
-            $('#results li').remove();
-            $.each(received.data, function(index, photo) {
-                var stRes = photo.images.standard_resolution.url,
-                user_id = photo.user.id,
-                fullName = photo.user.full_name,
-                likes = photo.likes,
-                pic = "<li><img src='" + stRes + "' alt='" + user_id + "' /><h3> Created by: " + fullName + ", Likes: " + likes + "<h3></li>";
-
-                $('#results').append(pic);
-            });
-        }
-    })
-    .done(function() {
-        console.log("success");
-    })
-    .fail(function() {
-        console.log("error");
-    })
-    .always(function() {
-        console.log("complete");
-    });
-
-    $.getJSON(url, loadImgs);
+    }// End if/else to check network connection
 };// End Display Popular Photos Function
 
 // Current Weather Function
@@ -169,30 +206,34 @@ var picFn = function(){
 var connectionFn = function(){
     var networkState = navigator.connection.type;
 
-        var states = {};
-        states[Connection.UNKNOWN]  = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI]     = 'WiFi connection';
-        states[Connection.CELL_2G]  = 'Cell 2G connection';
-        states[Connection.CELL_3G]  = 'Cell 3G connection';
-        states[Connection.CELL_4G]  = 'Cell 4G connection';
-        states[Connection.CELL]     = 'Cell generic connection';
-        states[Connection.NONE]     = 'No network connection';
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
 
+    if (states[networkState] === 'No network connection') {
+        alert('Please connect to the internet to access this function');
+    }else{
         alert('Connection type: ' + states[networkState]);
+    }
 };// End Check Connection
 
 // Check Geo Location
 var geoFn = function(){
     function geoSuccess(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
-              'Longitude: '         + position.coords.longitude         + '\n' +
-              'Altitude: '          + position.coords.altitude          + '\n' +
-              'Accuracy: '          + position.coords.accuracy          + '\n' +
-              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-              'Heading: '           + position.coords.heading           + '\n' +
-              'Speed: '             + position.coords.speed             + '\n' +
-              'Timestamp: '         + position.timestamp                + '\n');
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n');
 
 
     }
@@ -216,7 +257,7 @@ var notifyFn = function(){
         alertDismissed,         // callback
         'Eric Garcia',            // title
         'GO!'                  // buttonName
-    );
+        );
 };
 
 // End Global Functions
