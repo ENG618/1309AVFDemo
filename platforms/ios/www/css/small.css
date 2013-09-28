@@ -2,7 +2,6 @@
 Layout for small screens between 50-500px
 */
 
-
 .ui-body-c, .ui-overlay-c{
 	background-image: url(../img/wood_03.jpg);
 	background-repeat:repeat;
@@ -11,4 +10,5 @@ Layout for small screens between 50-500px
 
 img{
 	max-width: 100%;
+	position: relative;
 }
