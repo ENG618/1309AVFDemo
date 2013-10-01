@@ -3,10 +3,11 @@ Eric Garcia
 1309 ASD
 */
 
-*{
+body{
 	line-height: 1.5em;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Arial, sans-serif, Helvetica;
 	font-size: 16px;
+	word-wrap: break-word;
 }
 
 .ui-body-c, .ui-overlay-c{
@@ -32,8 +33,25 @@ h2 {
 
 h3 {margin: 10px 5px 0 0; font-size: 1.2em}
 
-p{margin: 15px 5px 5px 15px; font-size: 1.1em}
+p{
+	margin: 15px 5px 5px 15px;
+	font-size: 1.1em;
+}
 
 ul{list-style-type: none;}
+
+ul{
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img{
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 
 

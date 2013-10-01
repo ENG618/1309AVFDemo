@@ -2,8 +2,22 @@
 Layout for medium screens between 501-899px
 */
 
+.ui-body-c, .ui-overlay-c{
+	background-image: url(../img/wood_01.jpg);
+	background-repeat:repeat;
+	background-position:center center;
+}
 
+.ui-panel-display-reveal {background: url(../img/wood_02.jpg);}
+
+body{font-size: 24px;}
 
 ul li img{
 	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+h1, h2, h3{color: white;}
+
+p{color: white;}
